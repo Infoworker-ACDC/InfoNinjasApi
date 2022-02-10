@@ -23,7 +23,16 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    
 
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: 
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
