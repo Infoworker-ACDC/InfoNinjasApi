@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'infoninjaswebapi'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B92A781F79D6423FB366BD8F905E611B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C356DD67770D4162AB3B92EB9B8D4F57 }}
           package: .
