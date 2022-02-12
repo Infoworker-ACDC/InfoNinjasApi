@@ -1,4 +1,5 @@
 using InfoNinjasApi.Data;
+using InfoNinjasApi.Features.NinjaFeatures;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
@@ -13,6 +14,12 @@ builder.Services.AddDbContext<ApiContext>(opt =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add Automapper to be used in mapping db <=> dto
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+// Connect dependency injextions:
+builder.Services.AddScoped<INinjaService, NinjaService>();
 
 var app = builder.Build();
 

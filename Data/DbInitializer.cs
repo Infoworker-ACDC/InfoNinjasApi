@@ -4,7 +4,7 @@ namespace InfoNinjasApi.Data
 {
     public static class DbInitializer
     {
-        private static SeedNinjas _seedNinjas;
+        private static SeedNinjas? _seedNinjas;
 
         public static void InitializeStandard(ApiContext context)
         {
